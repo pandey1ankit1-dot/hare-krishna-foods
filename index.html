@@ -7,44 +7,66 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
  margin:0;
  font-family:Arial,sans-serif;
  background:#fffaf0;
  color:#173d2b;
 }
+
 header{
  background:linear-gradient(135deg,#075b35,#0b7a43);
  color:white;
  padding:22px 16px;
  text-align:center;
 }
-header h1{margin:0;font-size:30px}
-header p{margin:7px 0 0;font-size:15px}
+
+header h1{
+ margin:0;
+ font-size:30px;
+}
+
+header p{
+ margin:7px 0 0;
+ font-size:15px;
+}
 
 .hero{
  padding:30px 18px;
  text-align:center;
  background:#fff3c7;
 }
-.hero h2{font-size:28px;margin:5px 0 10px;color:#9b3d13}
-.hero p{font-size:17px;line-height:1.5}
+
+.hero h2{
+ font-size:28px;
+ margin:5px 0 10px;
+ color:#9b3d13;
+}
+
+.hero p{
+ font-size:17px;
+ line-height:1.5;
+}
 
 .products{
  padding:25px 15px;
  max-width:1000px;
  margin:auto;
 }
+
 .products h2{
  text-align:center;
  color:#075b35;
  margin-bottom:22px;
 }
+
 .grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
  gap:18px;
 }
+
 .card{
  background:white;
  border-radius:16px;
@@ -52,6 +74,7 @@ header p{margin:7px 0 0;font-size:15px}
  box-shadow:0 4px 15px #0002;
  text-align:center;
 }
+
 .card .photo{
  height:190px;
  border-radius:12px;
@@ -59,21 +82,51 @@ header p{margin:7px 0 0;font-size:15px}
  display:flex;
  align-items:center;
  justify-content:center;
- font-size:60px;
-}.card .photo img{
+}
+
+.card .photo img{
  width:80%;
  height:80%;
  object-fit:contain;
  border-radius:12px;
 }
-.card h3{margin:14px 0 6px;color:#8b3510}
-.card p{color:#555}
+
+.card h3{
+ margin:14px 0 6px;
+ color:#8b3510;
+}
+
+.card p{
+ color:#555;
+}
+
 .price{
  font-size:21px;
  font-weight:bold;
  color:#075b35;
  margin:10px;
 }
+
+.quantity{
+ margin:15px 0;
+}
+
+.quantity button{
+ width:40px;
+ height:40px;
+ border:none;
+ border-radius:8px;
+ background:#128c4b;
+ color:white;
+ font-size:22px;
+}
+
+.quantity span{
+ margin:0 15px;
+ font-size:20px;
+ font-weight:bold;
+}
+
 .order{
  display:inline-block;
  background:#128c4b;
@@ -82,17 +135,25 @@ header p{margin:7px 0 0;font-size:15px}
  border-radius:25px;
  text-decoration:none;
  font-weight:bold;
+ border:none;
+ cursor:pointer;
 }
+
 .about{
  background:#f5e9c9;
  padding:28px 18px;
  text-align:center;
 }
-.about h2{color:#075b35}
+
+.about h2{
+ color:#075b35;
+}
+
 .contact{
  padding:28px 18px;
  text-align:center;
 }
+
 .whatsapp{
  display:inline-block;
  background:#25D366;
@@ -103,6 +164,7 @@ header p{margin:7px 0 0;font-size:15px}
  font-size:18px;
  font-weight:bold;
 }
+
 footer{
  background:#123b29;
  color:white;
@@ -133,34 +195,38 @@ Hare Krishna Foods में आपको स्वादिष्ट और ग
 
 <div class="grid">
 
-<div class="grid">
-
-
 <div class="card">
+
 <div class="photo">
-<img src="Product-1.jpg" alt="Hare Krishna Foods">
+<img src="Product-1.jpg" alt="Hare Krishna Khurma">
 </div>
+
 <h3>Hare Krishna Khurma</h3>
+
 <p>करारा और स्वादिष्ट खुरमा</p>
-<div class="price">₹50 / पैकेट</div>
-<a class="order"
- <div style="margin:15px 0;">
+
+<div class="price">
+₹50 / पैकेट
+</div>
+
+<div class="quantity">
 <button onclick="changeQty(-1)">−</button>
-<span id="qty" style="margin:0 15px;font-size:20px;">1</span>
+
+<span id="qty">1</span>
+
 <button onclick="changeQty(1)">+</button>
 </div>
 
 <div class="price">
-Total: ₹<span id="total">45</span>
+Total: ₹<span id="total">50</span>
 </div>
-href="https://wa.me/918405807339?text=Namaste%20Hare%20Krishna%20Foods%20se%20Khurma%20order%20karna%20hai">
+
+<a class="order" id="orderButton"
+href="https://wa.me/918405807339">
 WhatsApp पर Order करें
 </a>
-</div>
-
 
 </div>
-</section>
 
 </div>
 </section>
@@ -175,28 +241,53 @@ food products उपलब्ध कराना।
 
 <section class="contact">
 <h2>📞 Order करने के लिए संपर्क करें</h2>
-<p>मोबाइल / WhatsApp: <b>8405807339</b></p>
+
+<p>
+मोबाइल / WhatsApp: <b>8405807339</b>
+</p>
 
 <a class="whatsapp"
-href="https://wa.me/918405807339?text=Namaste%20Hare%20Krishna%20Foods%20se%20order%20karna%20hai">
+href="https://wa.me/918405807339">
 💬 WhatsApp पर Order करें
 </a>
+
 </section>
 
 <footer>
 © 2026 Hare Krishna Foods | All Rights Reserved
 </footer>
+
 <script>
+
 let qty = 1;
+const price = 50;
 
-function changeQty(change) {
-  qty += change;
+function changeQty(change){
 
-  if (qty < 1) qty = 1;
+ qty += change;
 
-  document.getElementById("qty").innerText = qty;
-  document.getElementById("total").innerText = qty * 45;
+ if(qty < 1){
+  qty = 1;
+ }
+
+ document.getElementById("qty").innerText = qty;
+
+ document.getElementById("total").innerText = qty * price;
+
+ let message =
+ "Namaste Hare Krishna Foods se Khurma order karna hai.%0A%0A" +
+ "Product: Hare Krishna Khurma%0A" +
+ "Quantity: " + qty + " packet%0A" +
+ "Price: ₹" + price + " / packet%0A" +
+ "Total: ₹" + (qty * price);
+
+ document.getElementById("orderButton").href =
+ "https://wa.me/918405807339?text=" + message;
 }
+
+changeQty(0);
+
 </script>
+
 </body>
 </html>
