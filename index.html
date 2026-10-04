@@ -144,6 +144,15 @@ Hare Krishna Foods में आपको स्वादिष्ट और ग
 <p>करारा और स्वादिष्ट खुरमा</p>
 <div class="price">₹50 / पैकेट</div>
 <a class="order"
+ <div style="margin:15px 0;">
+<button onclick="changeQty(-1)">−</button>
+<span id="qty" style="margin:0 15px;font-size:20px;">1</span>
+<button onclick="changeQty(1)">+</button>
+</div>
+
+<div class="price">
+Total: ₹<span id="total">45</span>
+</div>
 href="https://wa.me/918405807339?text=Namaste%20Hare%20Krishna%20Foods%20se%20Khurma%20order%20karna%20hai">
 WhatsApp पर Order करें
 </a>
@@ -177,6 +186,17 @@ href="https://wa.me/918405807339?text=Namaste%20Hare%20Krishna%20Foods%20se%20or
 <footer>
 © 2026 Hare Krishna Foods | All Rights Reserved
 </footer>
+<script>
+let qty = 1;
 
+function changeQty(change) {
+  qty += change;
+
+  if (qty < 1) qty = 1;
+
+  document.getElementById("qty").innerText = qty;
+  document.getElementById("total").innerText = qty * 45;
+}
+</script>
 </body>
 </html>
