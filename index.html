@@ -22,15 +22,8 @@ padding:22px 16px;
 text-align:center;
 }
 
-header h1{
-margin:0;
-font-size:30px;
-}
-
-header p{
-margin:7px 0 0;
-font-size:15px;
-}
+header h1{margin:0;font-size:30px}
+header p{margin:7px 0 0;font-size:15px}
 
 .lang{
 text-align:center;
@@ -105,9 +98,7 @@ margin:14px 0 6px;
 color:#8b3510;
 }
 
-.card p{
-color:#555;
-}
+.card p{color:#555}
 
 .price{
 font-size:21px;
@@ -116,9 +107,7 @@ color:#075b35;
 margin:10px;
 }
 
-.quantity{
-margin:18px 0;
-}
+.quantity{margin:18px 0}
 
 .quantity button{
 width:42px;
@@ -182,10 +171,259 @@ padding:28px 18px;
 text-align:center;
 }
 
-.about h2{
-color:#075b35;
-}
+.about h2{color:#075b35}
 
 .contact{
 padding:28px 18px;
-text-align
+text-align:center;
+}
+
+footer{
+background:#123b29;
+color:white;
+text-align:center;
+padding:18px;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🦚 Hare Krishna Foods</h1>
+<p id="tagline">शुद्ध स्वाद • बेहतरीन गुणवत्ता • हर खुशी के लिए</p>
+</header>
+
+<div class="lang">
+<button onclick="setHindi()">🇮🇳 हिंदी</button>
+<button onclick="setEnglish()">🇬🇧 English</button>
+</div>
+
+<section class="hero">
+<h2 id="heroTitle">स्वाद जो दिल में बस जाए ❤️</h2>
+<p id="heroText">
+Hare Krishna Foods में आपको स्वादिष्ट और गुणवत्तापूर्ण खाद्य उत्पाद मिलेंगे।
+</p>
+</section>
+
+<section class="products">
+
+<h2 id="productTitle">🛍️ हमारा Product</h2>
+
+<div class="card">
+
+<div class="photo">
+<img src="Product-1.jpg" alt="Hare Krishna Khurma">
+</div>
+
+<h3 id="productName">Hare Krishna Khurma</h3>
+
+<p id="productDescription">करारा और स्वादिष्ट खुरमा</p>
+
+<div class="price">
+₹50 / <span id="perPacket">पैकेट</span>
+</div>
+
+<div class="quantity">
+<button onclick="changeQty(-1)">−</button>
+<span id="qty">1</span>
+<button onclick="changeQty(1)">+</button>
+</div>
+
+<div class="price">
+<span id="totalText">कुल:</span> ₹<span id="total">50</span>
+</div>
+
+<div class="form">
+
+<label id="nameLabel">👤 आपका नाम</label>
+<input type="text" id="name" placeholder="अपना नाम लिखें">
+
+<label id="mobileLabel">📱 मोबाइल नंबर</label>
+<input type="tel" id="mobile" placeholder="10 अंकों का मोबाइल नंबर">
+
+<label id="addressLabel">📍 पूरा Address / Location</label>
+<textarea id="address" placeholder="घर नंबर, गली, मोहल्ला, शहर आदि"></textarea>
+
+<label id="paymentLabel">💵 Payment</label>
+
+<select id="payment">
+<option>Cash on Delivery</option>
+</select>
+
+<button class="order" id="orderButton" onclick="placeOrder()">
+💬 WhatsApp पर Order करें
+</button>
+
+</div>
+</div>
+</section>
+
+<section class="about">
+<h2>🌿 Hare Krishna Foods</h2>
+<p id="aboutText">
+हमारा उद्देश्य है आपको स्वादिष्ट और अच्छी गुणवत्ता वाले food products उपलब्ध कराना।
+</p>
+</section>
+
+<section class="contact">
+<h2 id="contactTitle">📞 संपर्क करें</h2>
+<p>WhatsApp: <b>8405807339</b></p>
+</section>
+
+<footer>
+© 2026 Hare Krishna Foods | All Rights Reserved
+</footer>
+
+<script>
+
+let qty = 1;
+const price = 50;
+let language = "hi";
+
+function changeQty(change){
+qty += change;
+
+if(qty < 1){
+qty = 1;
+}
+
+document.getElementById("qty").innerText = qty;
+document.getElementById("total").innerText = qty * price;
+}
+
+function placeOrder(){
+
+let name = document.getElementById("name").value.trim();
+let mobile = document.getElementById("mobile").value.trim();
+let address = document.getElementById("address").value.trim();
+
+if(name === ""){
+alert(language === "hi" ? "कृपया अपना नाम लिखें" : "Please enter your name");
+return;
+}
+
+if(!/^[0-9]{10}$/.test(mobile)){
+alert(language === "hi" ? "कृपया सही 10 अंकों का मोबाइल नंबर डालें" : "Please enter a valid 10-digit mobile number");
+return;
+}
+
+if(address === ""){
+alert(language === "hi" ? "कृपया अपना पूरा Address लिखें" : "Please enter your full address");
+return;
+}
+
+let total = qty * price;
+
+let message =
+"Hare Krishna Foods Order%0A%0A" +
+"Product: Hare Krishna Khurma%0A" +
+"Quantity: " + qty + " packet%0A" +
+"Price: ₹" + price + " / packet%0A" +
+"Total: ₹" + total + "%0A" +
+"Payment: Cash on Delivery%0A%0A" +
+"Name: " + name + "%0A" +
+"Mobile: " + mobile + "%0A" +
+"Address: " + address;
+
+window.location.href =
+"https://wa.me/918405807339?text=" + encodeURIComponent(message);
+}
+
+function setHindi(){
+language = "hi";
+
+document.getElementById("tagline").innerText =
+"शुद्ध स्वाद • बेहतरीन गुणवत्ता • हर खुशी के लिए";
+
+document.getElementById("heroTitle").innerText =
+"स्वाद जो दिल में बस जाए ❤️";
+
+document.getElementById("heroText").innerText =
+"Hare Krishna Foods में आपको स्वादिष्ट और गुणवत्तापूर्ण खाद्य उत्पाद मिलेंगे।";
+
+document.getElementById("productTitle").innerText =
+"🛍️ हमारा Product";
+
+document.getElementById("productDescription").innerText =
+"करारा और स्वादिष्ट खुरमा";
+
+document.getElementById("perPacket").innerText =
+"पैकेट";
+
+document.getElementById("totalText").innerText =
+"कुल:";
+
+document.getElementById("nameLabel").innerText =
+"👤 आपका नाम";
+
+document.getElementById("mobileLabel").innerText =
+"📱 मोबाइल नंबर";
+
+document.getElementById("addressLabel").innerText =
+"📍 पूरा Address / Location";
+
+document.getElementById("paymentLabel").innerText =
+"💵 Payment";
+
+document.getElementById("orderButton").innerText =
+"💬 WhatsApp पर Order करें";
+
+document.getElementById("aboutText").innerText =
+"हमारा उद्देश्य है आपको स्वादिष्ट और अच्छी गुणवत्ता वाले food products उपलब्ध कराना।";
+
+document.getElementById("contactTitle").innerText =
+"📞 संपर्क करें";
+}
+
+function setEnglish(){
+language = "en";
+
+document.getElementById("tagline").innerText =
+"Pure Taste • Great Quality • Made for Every Occasion";
+
+document.getElementById("heroTitle").innerText =
+"A Taste You'll Love ❤️";
+
+document.getElementById("heroText").innerText =
+"Enjoy delicious and quality food products from Hare Krishna Foods.";
+
+document.getElementById("productTitle").innerText =
+"🛍️ Our Product";
+
+document.getElementById("productDescription").innerText =
+"Crispy and delicious Khurma";
+
+document.getElementById("perPacket").innerText =
+"packet";
+
+document.getElementById("totalText").innerText =
+"Total:";
+
+document.getElementById("nameLabel").innerText =
+"👤 Your Name";
+
+document.getElementById("mobileLabel").innerText =
+"📱 Mobile Number";
+
+document.getElementById("addressLabel").innerText =
+"📍 Full Address / Location";
+
+document.getElementById("paymentLabel").innerText =
+"💵 Payment";
+
+document.getElementById("orderButton").innerText =
+"💬 Order on WhatsApp";
+
+document.getElementById("aboutText").innerText =
+"Our goal is to provide delicious and quality food products.";
+
+document.getElementById("contactTitle").innerText =
+"📞 Contact Us";
+}
+
+</script>
+
+</body>
+</html>
