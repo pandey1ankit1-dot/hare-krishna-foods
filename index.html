@@ -9,168 +9,165 @@
 *{box-sizing:border-box}
 
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#fffaf0;
- color:#173d2b;
+margin:0;
+font-family:Arial,sans-serif;
+background:#fffaf0;
+color:#173d2b;
 }
 
 header{
- background:linear-gradient(135deg,#075b35,#0b7a43);
- color:white;
- padding:22px 16px;
- text-align:center;
+background:linear-gradient(135deg,#075b35,#0b7a43);
+color:white;
+padding:22px 16px;
+text-align:center;
 }
 
-header h1{
- margin:0;
- font-size:30px;
-}
-
-header p{
- margin:7px 0 0;
- font-size:15px;
-}
+header h1{margin:0;font-size:30px}
+header p{margin:7px 0 0;font-size:15px}
 
 .hero{
- padding:30px 18px;
- text-align:center;
- background:#fff3c7;
+padding:30px 18px;
+text-align:center;
+background:#fff3c7;
 }
 
 .hero h2{
- font-size:28px;
- margin:5px 0 10px;
- color:#9b3d13;
+font-size:28px;
+margin:5px 0 10px;
+color:#9b3d13;
 }
 
 .hero p{
- font-size:17px;
- line-height:1.5;
+font-size:17px;
+line-height:1.5;
 }
 
 .products{
- padding:25px 15px;
- max-width:1000px;
- margin:auto;
+padding:25px 15px;
+max-width:600px;
+margin:auto;
 }
 
 .products h2{
- text-align:center;
- color:#075b35;
- margin-bottom:22px;
-}
-
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:18px;
+text-align:center;
+color:#075b35;
+margin-bottom:22px;
 }
 
 .card{
- background:white;
- border-radius:16px;
- padding:15px;
- box-shadow:0 4px 15px #0002;
- text-align:center;
+background:white;
+border-radius:16px;
+padding:15px;
+box-shadow:0 4px 15px #0002;
+text-align:center;
 }
 
-.card .photo{
- height:190px;
- border-radius:12px;
- background:#f4e7c5;
- display:flex;
- align-items:center;
- justify-content:center;
+.photo{
+height:220px;
+border-radius:12px;
+background:#f4e7c5;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-.card .photo img{
- width:80%;
- height:80%;
- object-fit:contain;
- border-radius:12px;
+.photo img{
+width:80%;
+height:90%;
+object-fit:contain;
+border-radius:12px;
 }
 
 .card h3{
- margin:14px 0 6px;
- color:#8b3510;
-}
-
-.card p{
- color:#555;
+margin:14px 0 6px;
+color:#8b3510;
 }
 
 .price{
- font-size:21px;
- font-weight:bold;
- color:#075b35;
- margin:10px;
+font-size:21px;
+font-weight:bold;
+color:#075b35;
+margin:10px;
 }
 
 .quantity{
- margin:15px 0;
+margin:15px 0;
 }
 
 .quantity button{
- width:40px;
- height:40px;
- border:none;
- border-radius:8px;
- background:#128c4b;
- color:white;
- font-size:22px;
+width:42px;
+height:42px;
+border:none;
+border-radius:8px;
+background:#128c4b;
+color:white;
+font-size:22px;
 }
 
 .quantity span{
- margin:0 15px;
- font-size:20px;
- font-weight:bold;
+margin:0 15px;
+font-size:20px;
+font-weight:bold;
+}
+
+.form{
+margin-top:20px;
+text-align:left;
+}
+
+.form label{
+display:block;
+font-weight:bold;
+margin:12px 0 5px;
+}
+
+.form input,
+.form textarea,
+.form select{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.form textarea{
+height:80px;
+resize:none;
 }
 
 .order{
- display:inline-block;
- background:#128c4b;
- color:white;
- padding:11px 20px;
- border-radius:25px;
- text-decoration:none;
- font-weight:bold;
- border:none;
- cursor:pointer;
+width:100%;
+margin-top:20px;
+padding:14px;
+border:none;
+border-radius:25px;
+background:#25D366;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .about{
- background:#f5e9c9;
- padding:28px 18px;
- text-align:center;
+background:#f5e9c9;
+padding:28px 18px;
+text-align:center;
 }
 
-.about h2{
- color:#075b35;
-}
+.about h2{color:#075b35}
 
 .contact{
- padding:28px 18px;
- text-align:center;
-}
-
-.whatsapp{
- display:inline-block;
- background:#25D366;
- color:white;
- padding:14px 25px;
- border-radius:30px;
- text-decoration:none;
- font-size:18px;
- font-weight:bold;
+padding:28px 18px;
+text-align:center;
 }
 
 footer{
- background:#123b29;
- color:white;
- text-align:center;
- padding:18px;
- font-size:14px;
+background:#123b29;
+color:white;
+text-align:center;
+padding:18px;
+font-size:14px;
 }
 </style>
 </head>
@@ -191,9 +188,8 @@ Hare Krishna Foods में आपको स्वादिष्ट और ग
 </section>
 
 <section class="products">
-<h2>🛍️ हमारे Products</h2>
 
-<div class="grid">
+<h2>🛍️ हमारे Products</h2>
 
 <div class="card">
 
@@ -210,84 +206,22 @@ Hare Krishna Foods में आपको स्वादिष्ट और ग
 </div>
 
 <div class="quantity">
+
 <button onclick="changeQty(-1)">−</button>
 
 <span id="qty">1</span>
 
 <button onclick="changeQty(1)">+</button>
+
 </div>
 
 <div class="price">
 Total: ₹<span id="total">50</span>
 </div>
 
-<a class="order" id="orderButton"
-href="https://wa.me/918405807339">
-WhatsApp पर Order करें
-</a>
+<div class="form">
 
-</div>
+<label>👤 आपका नाम</label>
+<input type="text" id="name" placeholder="अपना नाम लिखें">
 
-</div>
-</section>
-
-<section class="about">
-<h2>🌿 Hare Krishna Foods</h2>
-<p>
-हमारा उद्देश्य है आपको स्वादिष्ट और अच्छी गुणवत्ता वाले
-food products उपलब्ध कराना।
-</p>
-</section>
-
-<section class="contact">
-<h2>📞 Order करने के लिए संपर्क करें</h2>
-
-<p>
-मोबाइल / WhatsApp: <b>8405807339</b>
-</p>
-
-<a class="whatsapp"
-href="https://wa.me/918405807339">
-💬 WhatsApp पर Order करें
-</a>
-
-</section>
-
-<footer>
-© 2026 Hare Krishna Foods | All Rights Reserved
-</footer>
-
-<script>
-
-let qty = 1;
-const price = 50;
-
-function changeQty(change){
-
- qty += change;
-
- if(qty < 1){
-  qty = 1;
- }
-
- document.getElementById("qty").innerText = qty;
-
- document.getElementById("total").innerText = qty * price;
-
- let message =
- "Namaste Hare Krishna Foods se Khurma order karna hai.%0A%0A" +
- "Product: Hare Krishna Khurma%0A" +
- "Quantity: " + qty + " packet%0A" +
- "Price: ₹" + price + " / packet%0A" +
- "Total: ₹" + (qty * price);
-
- document.getElementById("orderButton").href =
- "https://wa.me/918405807339?text=" + message;
-}
-
-changeQty(0);
-
-</script>
-
-</body>
-</html>
+<label>📱 मोबाइल नंबर</
