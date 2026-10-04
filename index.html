@@ -22,8 +22,30 @@ padding:22px 16px;
 text-align:center;
 }
 
-header h1{margin:0;font-size:30px}
-header p{margin:7px 0 0;font-size:15px}
+header h1{
+margin:0;
+font-size:30px;
+}
+
+header p{
+margin:7px 0 0;
+font-size:15px;
+}
+
+.lang{
+text-align:center;
+padding:12px;
+background:white;
+}
+
+.lang button{
+padding:8px 16px;
+margin:3px;
+border:1px solid #128c4b;
+border-radius:20px;
+background:white;
+cursor:pointer;
+}
 
 .hero{
 padding:30px 18px;
@@ -44,7 +66,7 @@ line-height:1.5;
 
 .products{
 padding:25px 15px;
-max-width:600px;
+max-width:650px;
 margin:auto;
 }
 
@@ -63,7 +85,7 @@ text-align:center;
 }
 
 .photo{
-height:220px;
+height:230px;
 border-radius:12px;
 background:#f4e7c5;
 display:flex;
@@ -72,7 +94,7 @@ justify-content:center;
 }
 
 .photo img{
-width:80%;
+width:85%;
 height:90%;
 object-fit:contain;
 border-radius:12px;
@@ -83,6 +105,10 @@ margin:14px 0 6px;
 color:#8b3510;
 }
 
+.card p{
+color:#555;
+}
+
 .price{
 font-size:21px;
 font-weight:bold;
@@ -91,7 +117,7 @@ margin:10px;
 }
 
 .quantity{
-margin:15px 0;
+margin:18px 0;
 }
 
 .quantity button{
@@ -102,10 +128,11 @@ border-radius:8px;
 background:#128c4b;
 color:white;
 font-size:22px;
+cursor:pointer;
 }
 
 .quantity span{
-margin:0 15px;
+margin:0 18px;
 font-size:20px;
 font-weight:bold;
 }
@@ -118,7 +145,7 @@ text-align:left;
 .form label{
 display:block;
 font-weight:bold;
-margin:12px 0 5px;
+margin:13px 0 6px;
 }
 
 .form input,
@@ -132,7 +159,7 @@ font-size:16px;
 }
 
 .form textarea{
-height:80px;
+height:90px;
 resize:none;
 }
 
@@ -155,73 +182,10 @@ padding:28px 18px;
 text-align:center;
 }
 
-.about h2{color:#075b35}
+.about h2{
+color:#075b35;
+}
 
 .contact{
 padding:28px 18px;
-text-align:center;
-}
-
-footer{
-background:#123b29;
-color:white;
-text-align:center;
-padding:18px;
-font-size:14px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>🦚 Hare Krishna Foods</h1>
-<p>शुद्ध स्वाद • बेहतरीन गुणवत्ता • हर खुशी के लिए</p>
-</header>
-
-<section class="hero">
-<h2>स्वाद जो दिल में बस जाए ❤️</h2>
-<p>
-Hare Krishna Foods में आपको स्वादिष्ट और गुणवत्तापूर्ण
-खाद्य उत्पाद मिलेंगे।
-</p>
-</section>
-
-<section class="products">
-
-<h2>🛍️ हमारे Products</h2>
-
-<div class="card">
-
-<div class="photo">
-<img src="Product-1.jpg" alt="Hare Krishna Khurma">
-</div>
-
-<h3>Hare Krishna Khurma</h3>
-
-<p>करारा और स्वादिष्ट खुरमा</p>
-
-<div class="price">
-₹50 / पैकेट
-</div>
-
-<div class="quantity">
-
-<button onclick="changeQty(-1)">−</button>
-
-<span id="qty">1</span>
-
-<button onclick="changeQty(1)">+</button>
-
-</div>
-
-<div class="price">
-Total: ₹<span id="total">50</span>
-</div>
-
-<div class="form">
-
-<label>👤 आपका नाम</label>
-<input type="text" id="name" placeholder="अपना नाम लिखें">
-
-<label>📱 मोबाइल नंबर</
+text-align
