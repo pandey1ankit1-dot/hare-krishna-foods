@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hare Krishna Foods</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -13,44 +16,71 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#f7f7f7;
+  background:#f6f7f6;
   color:#222;
 }
+
+/* HEADER */
 
 header{
   background:#0b7a43;
   color:white;
-  padding:16px;
+  padding:14px;
   position:sticky;
   top:0;
   z-index:10;
 }
 
 .top{
-  max-width:700px;
+  max-width:720px;
   margin:auto;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
+  gap:8px;
 }
 
 .logo{
-  font-size:22px;
+  font-size:20px;
   font-weight:bold;
 }
 
-.cartBtn{
-  background:white;
-  color:#075b35;
+.right{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.lang{
   border:0;
-  border-radius:22px;
-  padding:10px 15px;
+  border-radius:18px;
+  padding:7px 9px;
+  background:#ffffff30;
+  color:white;
   font-weight:bold;
   cursor:pointer;
 }
 
+.lang.active{
+  background:white;
+  color:#075b35;
+}
+
+.cartBtn{
+  border:0;
+  border-radius:22px;
+  padding:9px 12px;
+  background:white;
+  color:#075b35;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+/* HERO */
+
 .hero{
-  max-width:700px;
+  max-width:720px;
   margin:auto;
   padding:22px 15px;
   background:#fff3c7;
@@ -67,17 +97,21 @@ header{
   line-height:1.5;
 }
 
+
+/* MAIN */
+
 .container{
-  max-width:700px;
+  max-width:720px;
   margin:auto;
   padding:18px 14px 100px;
 }
 
 .title{
-  font-size:22px;
-  margin:8px 0 16px;
   color:#075b35;
 }
+
+
+/* PRODUCT */
 
 .product{
   background:white;
@@ -108,12 +142,11 @@ header{
 .productName{
   font-size:22px;
   font-weight:bold;
-  margin-bottom:7px;
 }
 
 .description{
   color:#666;
-  margin-bottom:12px;
+  margin:7px 0 12px;
 }
 
 .price{
@@ -140,7 +173,7 @@ header{
   color:white;
   border:0;
   border-radius:9px;
-  padding:12px 24px;
+  padding:12px 20px;
   font-size:16px;
   font-weight:bold;
   cursor:pointer;
@@ -160,7 +193,6 @@ header{
   background:#128c4b;
   color:white;
   font-size:21px;
-  cursor:pointer;
 }
 
 .qtyBox span{
@@ -172,6 +204,9 @@ header{
 .hidden{
   display:none;
 }
+
+
+/* CART */
 
 .cartSection{
   margin-top:20px;
@@ -206,8 +241,10 @@ header{
   color:white;
   font-size:17px;
   font-weight:bold;
-  cursor:pointer;
 }
+
+
+/* CHECKOUT */
 
 .formBox{
   margin-top:20px;
@@ -255,8 +292,10 @@ header{
   color:white;
   font-size:18px;
   font-weight:bold;
-  cursor:pointer;
 }
+
+
+/* BOTTOM CART */
 
 .bottomCart{
   position:fixed;
@@ -284,273 +323,1078 @@ header{
   font-weight:bold;
 }
 
+
+/* FOOTER */
+
 footer{
   background:#123b29;
   color:white;
   text-align:center;
   padding:20px;
-  margin-top:20px;
 }
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+  .logo{
+    font-size:16px;
+  }
+
+  .lang{
+    padding:6px 7px;
+    font-size:12px;
+  }
+
+  .cartBtn{
+    padding:8px 9px;
+    font-size:12px;
+  }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-  <div class="top">
-    <div class="logo">🦚 Hare Krishna Foods</div>
-    <button class="cartBtn" onclick="showCart()">
-      🛒 Cart <span id="cartCount">0</span>
-    </button>
-  </div>
+
+<div class="top">
+
+<div class="logo">
+🦚 Hare Krishna Foods
+</div>
+
+
+<div class="right">
+
+<button
+class="lang active"
+id="hiBtn"
+onclick="changeLanguage('hi')">
+
+हिंदी
+
+</button>
+
+
+<button
+class="lang"
+id="enBtn"
+onclick="changeLanguage('en')">
+
+English
+
+</button>
+
+
+<button
+class="cartBtn"
+onclick="showCart()">
+
+🛒 <span id="cartWord">कार्ट</span>
+
+<span id="cartCount">0</span>
+
+</button>
+
+</div>
+
+</div>
+
 </header>
 
+
+
+<!-- HERO -->
+
 <section class="hero">
-  <h1>स्वादिष्ट खुरमा घर बैठे 🏠</h1>
-  <p>Hare Krishna Foods का स्वादिष्ट और करारा Khurma अब आसानी से Order करें।</p>
+
+<h1 id="heroTitle">
+स्वादिष्ट खुरमा घर बैठे 🏠
+</h1>
+
+<p id="heroText">
+Hare Krishna Foods का स्वादिष्ट और करारा Khurma अब आसानी से Order करें।
+</p>
+
 </section>
+
+
+
+<!-- MAIN -->
 
 <div class="container">
 
-  <h2 class="title">🛍️ Our Products</h2>
 
-  <div class="product">
+<h2
+class="title"
+id="productsTitle">
 
-    <div class="productImage">
-      <img src="Product-1.jpg" alt="Hare Krishna Khurma">
-    </div>
+🛍️ हमारे उत्पाद
 
-    <div class="productInfo">
+</h2>
 
-      <div class="productName">
-        Hare Krishna Khurma
-      </div>
 
-      <div class="description">
-        करारा और स्वादिष्ट खुरमा
-      </div>
 
-      <div class="price">
-        ₹50 <span class="unit">/ packet</span>
-      </div>
+<!-- PRODUCT -->
 
-      <div class="addArea">
+<div class="product">
 
-        <button class="addBtn" id="addButton" onclick="addToCart()">
-          ADD TO CART
-        </button>
 
-        <div class="qtyBox hidden" id="productQty">
-          <button onclick="changeQty(-1)">−</button>
-          <span id="qty">1</span>
-          <button onclick="changeQty(1)">+</button>
-        </div>
+<div class="productImage">
 
-      </div>
-
-    </div>
-  </div>
-
-  <div class="cartSection hidden" id="cartSection">
-
-    <h2>🛒 Your Cart</h2>
-
-    <div class="cartRow">
-      <div>
-        <b>Hare Krishna Khurma</b><br>
-        ₹50 × <span id="cartQty">1</span>
-      </div>
-
-      <b>₹<span id="itemTotal">50</span></b>
-    </div>
-
-    <div class="cartTotal">
-      Total: ₹<span id="grandTotal">50</span>
-    </div>
-
-    <button class="checkoutBtn" onclick="showCheckout()">
-      Continue to Checkout →
-    </button>
-
-  </div>
-
-  <div class="formBox hidden" id="checkout">
-
-    <h2>📦 Delivery Details</h2>
-
-    <label>👤 आपका नाम</label>
-    <input id="name" type="text" placeholder="अपना नाम लिखें">
-
-    <label>📱 Mobile Number</label>
-    <input id="mobile" type="tel" maxlength="10"
-           placeholder="10 अंकों का मोबाइल नंबर">
-
-    <label>📍 Delivery Address</label>
-    <textarea id="address"
-      placeholder="घर नंबर, गली, मोहल्ला, शहर आदि"></textarea>
-
-    <div class="payment">
-      <b>💵 Payment Method</b>
-      <br><br>
-      ✅ Cash on Delivery
-    </div>
-
-    <button class="placeBtn" onclick="placeOrder()">
-      💬 Place Order on WhatsApp
-    </button>
-
-  </div>
+<img
+src="Product-1.jpg"
+alt="Hare Krishna Khurma">
 
 </div>
 
-<div class="bottomCart" id="bottomCart" onclick="showCart()">
-  <span>
-    🛒 <span id="bottomQty">0</span> item
-  </span>
 
-  <button>
-    View Cart →
-  </button>
+
+<div class="productInfo">
+
+
+<div
+class="productName"
+id="productName">
+
+Hare Krishna Khurma
+
 </div>
+
+
+<div
+class="description"
+id="description">
+
+करारा और स्वादिष्ट खुरमा
+
+</div>
+
+
+<div class="price">
+
+₹50
+
+<span
+class="unit"
+id="unit">
+
+/ पैकेट
+
+</span>
+
+</div>
+
+
+
+<div class="addArea">
+
+
+<button
+class="addBtn"
+id="addButton"
+onclick="addToCart()">
+
+🛒 <span id="addText">
+कार्ट में डालें
+</span>
+
+</button>
+
+
+
+<div
+class="qtyBox hidden"
+id="productQty">
+
+
+<button onclick="changeQty(-1)">
+−
+</button>
+
+
+<span id="qty">
+1
+</span>
+
+
+<button onclick="changeQty(1)">
++
+</button>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- CART -->
+
+<div
+class="cartSection hidden"
+id="cartSection">
+
+
+<h2 id="cartTitle">
+🛒 आपकी कार्ट
+</h2>
+
+
+<div class="cartRow">
+
+
+<div>
+
+<b id="cartProduct">
+Hare Krishna Khurma
+</b>
+
+<br>
+
+₹50 ×
+
+<span id="cartQty">
+1
+</span>
+
+</div>
+
+
+<b>
+
+₹<span id="itemTotal">
+50
+</span>
+
+</b>
+
+
+</div>
+
+
+
+<div class="cartTotal">
+
+<span id="totalWord">
+कुल:
+</span>
+
+₹<span id="grandTotal">
+50
+</span>
+
+</div>
+
+
+
+<button
+class="checkoutBtn"
+onclick="showCheckout()">
+
+<span id="checkoutText">
+चेकआउट पर जाएँ →
+</span>
+
+</button>
+
+
+</div>
+
+
+
+<!-- CHECKOUT -->
+
+<div
+class="formBox hidden"
+id="checkout">
+
+
+<h2 id="deliveryTitle">
+📦 डिलीवरी विवरण
+</h2>
+
+
+
+<label id="nameLabel">
+👤 आपका नाम
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="अपना नाम लिखें">
+
+
+
+<label id="mobileLabel">
+📱 मोबाइल नंबर
+</label>
+
+<input
+id="mobile"
+type="tel"
+maxlength="10"
+inputmode="numeric"
+placeholder="10 अंकों का मोबाइल नंबर">
+
+
+
+<label id="addressLabel">
+📍 डिलीवरी पता
+</label>
+
+<textarea
+id="address"
+placeholder="घर नंबर, गली, मोहल्ला, शहर आदि"></textarea>
+
+
+
+<div class="payment">
+
+<span id="paymentTitle">
+💵 भुगतान का तरीका
+</span>
+
+<br><br>
+
+✅ <span id="cod">
+कैश ऑन डिलीवरी
+</span>
+
+</div>
+
+
+
+<button
+class="placeBtn"
+onclick="placeOrder()">
+
+💬 <span id="placeOrderText">
+ऑर्डर करें
+</span>
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- BOTTOM CART -->
+
+<div
+class="bottomCart"
+onclick="showCart()">
+
+
+<span>
+
+🛒
+
+<span id="bottomQty">
+0
+</span>
+
+<span id="itemWord">
+आइटम
+</span>
+
+</span>
+
+
+<button>
+
+<span id="viewCart">
+कार्ट देखें →
+</span>
+
+</button>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
 
 <footer>
-  © 2026 Hare Krishna Foods<br>
-  WhatsApp: 8405807339
+
+<span id="footerText">
+© 2026 Hare Krishna Foods
+</span>
+
+<br>
+
+WhatsApp: 8405807339
+
 </footer>
+
+
 
 <script>
 
+
+/* =========================
+   CART
+========================= */
+
 let qty = 0;
+
 const price = 50;
 
-function addToCart(){
 
-  if(qty === 0){
-    qty = 1;
-  }
-
-  document.getElementById("addButton").classList.add("hidden");
-  document.getElementById("productQty").classList.remove("hidden");
-
-  updateCart();
-
-  showCart();
-}
-
-function changeQty(change){
-
-  qty += change;
-
-  if(qty < 0){
-    qty = 0;
-  }
-
-  if(qty === 0){
-
-    document.getElementById("addButton").classList.remove("hidden");
-    document.getElementById("productQty").classList.add("hidden");
-
-  }else{
-
-    document.getElementById("addButton").classList.add("hidden");
-    document.getElementById("productQty").classList.remove("hidden");
-
-  }
-
-  updateCart();
-}
 
 function updateCart(){
 
-  document.getElementById("qty").innerText = qty;
-  document.getElementById("cartQty").innerText = qty;
-  document.getElementById("cartCount").innerText = qty;
-  document.getElementById("bottomQty").innerText = qty;
+document.getElementById("qty").innerText =
+qty || 1;
 
-  let total = qty * price;
+document.getElementById("cartQty").innerText =
+qty;
 
-  document.getElementById("itemTotal").innerText = total;
-  document.getElementById("grandTotal").innerText = total;
-}
+document.getElementById("cartCount").innerText =
+qty;
 
-function showCart(){
+document.getElementById("bottomQty").innerText =
+qty;
 
-  if(qty === 0){
-    alert("पहले Product को Add to Cart करें");
-    return;
-  }
 
-  document.getElementById("cartSection").classList.remove("hidden");
+let total = qty * price;
 
-  document.getElementById("cartSection")
-    .scrollIntoView({behavior:"smooth"});
 
-}
+document.getElementById("itemTotal").innerText =
+total;
 
-function showCheckout(){
-
-  document.getElementById("checkout").classList.remove("hidden");
-
-  document.getElementById("checkout")
-    .scrollIntoView({behavior:"smooth"});
+document.getElementById("grandTotal").innerText =
+total;
 
 }
 
-function placeOrder(){
 
-  let name =
-    document.getElementById("name").value.trim();
 
-  let mobile =
-    document.getElementById("mobile").value.trim();
+/* ADD TO CART */
 
-  let address =
-    document.getElementById("address").value.trim();
+function addToCart(){
 
-  if(qty < 1){
-    alert("पहले Product को Add to Cart करें");
-    return;
-  }
+qty = 1;
 
-  if(name === ""){
-    alert("कृपया अपना नाम लिखें");
-    return;
-  }
 
-  if(!/^[0-9]{10}$/.test(mobile)){
-    alert("कृपया सही 10 अंकों का मोबाइल नंबर डालें");
-    return;
-  }
+document.getElementById("addButton")
+.classList.add("hidden");
 
-  if(address === ""){
-    alert("कृपया अपना पूरा Address लिखें");
-    return;
-  }
 
-  let total = qty * price;
+document.getElementById("productQty")
+.classList.remove("hidden");
 
-  let message =
-    "🦚 Hare Krishna Foods Order\n\n" +
-    "Product: Hare Krishna Khurma\n" +
-    "Quantity: " + qty + " packet\n" +
-    "Price: ₹" + price + " / packet\n" +
-    "Total: ₹" + total + "\n" +
-    "Payment: Cash on Delivery\n\n" +
-    "👤 Name: " + name + "\n" +
-    "📱 Mobile: " + mobile + "\n" +
-    "📍 Address: " + address;
-
-  let whatsappURL =
-    "https://wa.me/918405807339?text=" +
-    encodeURIComponent(message);
-
-  window.location.href = whatsappURL;
-
-}
 
 updateCart();
 
+showCart();
+
+}
+
+
+
+/* CHANGE QUANTITY */
+
+function changeQty(change){
+
+qty = qty + change;
+
+
+if(qty < 0){
+
+qty = 0;
+
+}
+
+
+if(qty === 0){
+
+document.getElementById("addButton")
+.classList.remove("hidden");
+
+document.getElementById("productQty")
+.classList.add("hidden");
+
+}
+
+else{
+
+document.getElementById("addButton")
+.classList.add("hidden");
+
+document.getElementById("productQty")
+.classList.remove("hidden");
+
+}
+
+
+updateCart();
+
+}
+
+
+
+/* SHOW CART */
+
+function showCart(){
+
+if(qty === 0){
+
+if(currentLanguage === "hi"){
+
+alert(
+"पहले Product को Cart में डालें।"
+);
+
+}
+
+else{
+
+alert(
+"Please add the product to cart first."
+);
+
+}
+
+return;
+
+}
+
+
+document.getElementById("cartSection")
+.classList.remove("hidden");
+
+
+document.getElementById("cartSection")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+
+/* CHECKOUT */
+
+function showCheckout(){
+
+if(qty === 0){
+
+showCart();
+
+return;
+
+}
+
+
+document.getElementById("checkout")
+.classList.remove("hidden");
+
+
+document.getElementById("checkout")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+let currentLanguage = "hi";
+
+
+function changeLanguage(language){
+
+currentLanguage = language;
+
+
+
+if(language === "hi"){
+
+/* BUTTON */
+
+document.getElementById("hiBtn")
+.classList.add("active");
+
+document.getElementById("enBtn")
+.classList.remove("active");
+
+
+/* HEADER */
+
+document.getElementById("cartWord")
+.innerText =
+"कार्ट";
+
+
+/* HERO */
+
+document.getElementById("heroTitle")
+.innerText =
+"स्वादिष्ट खुरमा घर बैठे 🏠";
+
+
+document.getElementById("heroText")
+.innerText =
+"Hare Krishna Foods का स्वादिष्ट और करारा Khurma अब आसानी से Order करें।";
+
+
+/* PRODUCTS */
+
+document.getElementById("productsTitle")
+.innerText =
+"🛍️ हमारे उत्पाद";
+
+
+document.getElementById("description")
+.innerText =
+"करारा और स्वादिष्ट खुरमा";
+
+
+document.getElementById("unit")
+.innerText =
+"/ पैकेट";
+
+
+document.getElementById("addText")
+.innerText =
+"कार्ट में डालें";
+
+
+/* CART */
+
+document.getElementById("cartTitle")
+.innerText =
+"🛒 आपकी कार्ट";
+
+
+document.getElementById("totalWord")
+.innerText =
+"कुल:";
+
+
+document.getElementById("checkoutText")
+.innerText =
+"चेकआउट पर जाएँ →";
+
+
+/* CHECKOUT */
+
+document.getElementById("deliveryTitle")
+.innerText =
+"📦 डिलीवरी विवरण";
+
+
+document.getElementById("nameLabel")
+.innerText =
+"👤 आपका नाम";
+
+
+document.getElementById("name")
+.placeholder =
+"अपना नाम लिखें";
+
+
+document.getElementById("mobileLabel")
+.innerText =
+"📱 मोबाइल नंबर";
+
+
+document.getElementById("mobile")
+.placeholder =
+"10 अंकों का मोबाइल नंबर";
+
+
+document.getElementById("addressLabel")
+.innerText =
+"📍 डिलीवरी पता";
+
+
+document.getElementById("address")
+.placeholder =
+"घर नंबर, गली, मोहल्ला, शहर आदि";
+
+
+document.getElementById("paymentTitle")
+.innerText =
+"💵 भुगतान का तरीका";
+
+
+document.getElementById("cod")
+.innerText =
+"कैश ऑन डिलीवरी";
+
+
+document.getElementById("placeOrderText")
+.innerText =
+"ऑर्डर करें";
+
+
+/* BOTTOM */
+
+document.getElementById("itemWord")
+.innerText =
+"आइटम";
+
+
+document.getElementById("viewCart")
+.innerText =
+"कार्ट देखें →";
+
+
+/* FOOTER */
+
+document.getElementById("footerText")
+.innerText =
+"© 2026 Hare Krishna Foods";
+
+}
+
+
+
+else{
+
+
+/* BUTTON */
+
+document.getElementById("hiBtn")
+.classList.remove("active");
+
+document.getElementById("enBtn")
+.classList.add("active");
+
+
+/* HEADER */
+
+document.getElementById("cartWord")
+.innerText =
+"Cart";
+
+
+/* HERO */
+
+document.getElementById("heroTitle")
+.innerText =
+"Delicious Khurma at Your Home 🏠";
+
+
+document.getElementById("heroText")
+.innerText =
+"Order delicious and crispy Khurma from Hare Krishna Foods.";
+
+
+/* PRODUCTS */
+
+document.getElementById("productsTitle")
+.innerText =
+"🛍️ Our Products";
+
+
+document.getElementById("description")
+.innerText =
+"Crispy and delicious Khurma";
+
+
+document.getElementById("unit")
+.innerText =
+"/ packet";
+
+
+document.getElementById("addText")
+.innerText =
+"ADD TO CART";
+
+
+/* CART */
+
+document.getElementById("cartTitle")
+.innerText =
+"🛒 Your Cart";
+
+
+document.getElementById("totalWord")
+.innerText =
+"Total:";
+
+
+document.getElementById("checkoutText")
+.innerText =
+"Continue to Checkout →";
+
+
+/* CHECKOUT */
+
+document.getElementById("deliveryTitle")
+.innerText =
+"📦 Delivery Details";
+
+
+document.getElementById("nameLabel")
+.innerText =
+"👤 Your Name";
+
+
+document.getElementById("name")
+.placeholder =
+"Enter your name";
+
+
+document.getElementById("mobileLabel")
+.innerText =
+"📱 Mobile Number";
+
+
+document.getElementById("mobile")
+.placeholder =
+"Enter 10 digit mobile number";
+
+
+document.getElementById("addressLabel")
+.innerText =
+"📍 Delivery Address";
+
+
+document.getElementById("address")
+.placeholder =
+"Enter your complete address";
+
+
+document.getElementById("paymentTitle")
+.innerText =
+"💵 Payment Method";
+
+
+document.getElementById("cod")
+.innerText =
+"Cash on Delivery";
+
+
+document.getElementById("placeOrderText")
+.innerText =
+"Place Order";
+
+
+/* BOTTOM */
+
+document.getElementById("itemWord")
+.innerText =
+"item";
+
+
+document.getElementById("viewCart")
+.innerText =
+"View Cart →";
+
+
+/* FOOTER */
+
+document.getElementById("footerText")
+.innerText =
+"© 2026 Hare Krishna Foods";
+
+}
+
+}
+
+
+
+/* =========================
+   WHATSAPP ORDER
+========================= */
+
+function placeOrder(){
+
+let name =
+document.getElementById("name")
+.value.trim();
+
+
+let mobile =
+document.getElementById("mobile")
+.value.trim();
+
+
+let address =
+document.getElementById("address")
+.value.trim();
+
+
+
+if(qty < 1){
+
+if(currentLanguage === "hi"){
+
+alert(
+"पहले Product को Cart में डालें।"
+);
+
+}
+
+else{
+
+alert(
+"Please add the product to cart first."
+);
+
+}
+
+return;
+
+}
+
+
+
+if(name === ""){
+
+if(currentLanguage === "hi"){
+
+alert(
+"कृपया अपना नाम लिखें।"
+);
+
+}
+
+else{
+
+alert(
+"Please enter your name."
+);
+
+}
+
+return;
+
+}
+
+
+
+if(!/^[0-9]{10}$/.test(mobile)){
+
+if(currentLanguage === "hi"){
+
+alert(
+"कृपया सही 10 अंकों का मोबाइल नंबर डालें।"
+);
+
+}
+
+else{
+
+alert(
+"Please enter a valid 10 digit mobile number."
+);
+
+}
+
+return;
+
+}
+
+
+
+if(address === ""){
+
+if(currentLanguage === "hi"){
+
+alert(
+"कृपया अपना पूरा Address लिखें।"
+);
+
+}
+
+else{
+
+alert(
+"Please enter your complete address."
+);
+
+}
+
+return;
+
+}
+
+
+
+let total =
+qty * price;
+
+
+let message =
+"🦚 Hare Krishna Foods Order\n\n" +
+
+"Product: Hare Krishna Khurma\n" +
+
+"Quantity: " +
+qty +
+" packet\n" +
+
+"Price: ₹" +
+price +
+" / packet\n" +
+
+"Total: ₹" +
+total +
+"\n" +
+
+"Payment: Cash on Delivery\n\n" +
+
+"👤 Name: " +
+name +
+"\n" +
+
+"📱 Mobile: " +
+mobile +
+"\n" +
+
+"📍 Address: " +
+address;
+
+
+
+let whatsappURL =
+"https://wa.me/918405807339?text=" +
+encodeURIComponent(message);
+
+
+window.location.href =
+whatsappURL;
+
+}
+
+
+
+/* START */
+
+updateCart();
+
+changeLanguage("hi");
+
 </script>
+
 
 </body>
 </html>
