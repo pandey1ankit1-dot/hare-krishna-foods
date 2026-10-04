@@ -317,20 +317,21 @@ return;
 let total = qty * price;
 
 let message =
-"Hare Krishna Foods Order%0A%0A" +
-"Product: Hare Krishna Khurma%0A" +
-"Quantity: " + qty + " packet%0A" +
-"Price: ₹" + price + " / packet%0A" +
-"Total: ₹" + total + "%0A" +
-"Payment: Cash on Delivery%0A%0A" +
-"Name: " + name + "%0A" +
-"Mobile: " + mobile + "%0A" +
+"Hare Krishna Foods Order\n\n" +
+"Product: Hare Krishna Khurma\n" +
+"Quantity: " + qty + " packet\n" +
+"Price: ₹" + price + " / packet\n" +
+"Total: ₹" + total + "\n" +
+"Payment: Cash on Delivery\n\n" +
+"Name: " + name + "\n" +
+"Mobile: " + mobile + "\n" +
 "Address: " + address;
 
 window.location.href =
 "https://wa.me/918405807339?text=" + encodeURIComponent(message);
+
+}
 function setHindi(){
-language = "hi";
 
 document.getElementById("tagline").innerText =
 "शुद्ध स्वाद • बेहतरीन गुणवत्ता • हर खुशी के लिए";
